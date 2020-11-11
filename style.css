@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body {
+  overflow: hidden;
+}
+
 canvas {
   cursor: -webkit-grab;
   cursor: grab;
@@ -28,5 +32,61 @@ canvas {
 
 .loading-screen-none {
   display: none;
+}
+
+.right-menu {
+  height: 100%;
+  width: 50px;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.right-menu .right-menu-container {
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  margin: 5px 0px 5px 0px;
+}
+
+.right-menu .right-menu-span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  width: 40px;
+  font-size: 22px;
+  background-color: black;
+  color: white;
+  border-radius: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.right-menu .right-menu-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=style.css.map */

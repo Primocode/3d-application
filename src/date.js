@@ -81,7 +81,7 @@ export const modelInformation = {
                 rotation_x: 0,
                 rotation_y: 0,
                 rotation_z: 0,
-                visible: false,
+                visible: true,
             },
             "Wolf-rokoko-table":  {
                 folderName: "Wolf-rokoko-table",
@@ -96,7 +96,7 @@ export const modelInformation = {
                 rotation_x: 0,
                 rotation_y: 0,
                 rotation_z: 0,
-                visible: true,
+                visible: false,
             },
         }
     },
@@ -104,7 +104,7 @@ export const modelInformation = {
         DirectionalLight: {
             "centerLight": {
                 color: "white",
-                power: 1.5,
+                power: 0.6,
                 position_x: 0,
                 position_y: 15,
                 position_z: 0
@@ -112,14 +112,14 @@ export const modelInformation = {
             "rightLight": {
                 color: "white",
                 power: 0.8,
-                position_x: 30,
+                position_x: 50,
                 position_y: 3,
                 position_z: 0
             },
             "leftLight": {
                 color: "white",
                 power: 0.8,
-                position_x: -30,
+                position_x: -50,
                 position_y: 3,
                 position_z: 0
             },
@@ -128,20 +128,20 @@ export const modelInformation = {
                 power: 0.8,
                 position_x: 0,
                 position_y: 3,
-                position_z: -30
+                position_z: -50
             },
             "backLight": {
                 color: "white",
                 power: 0.8,
                 position_x: 0,
                 position_y: 3,
-                position_z: 30
+                position_z: 50
             }
         },
         AmbientLight: {
             "backLight1": {
                 color: "white",
-                power: 0.8,
+                power: 0.7,
                 position_x: 0,
                 position_y: 3,
                 position_z: 30

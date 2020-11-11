@@ -13,6 +13,7 @@ function init() {
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10000 );
     camera.position.set( 10, 150, 350 );
 
+
     const sceneBackground = "#fafafa";
     scene = new THREE.Scene();
     scene.background = new THREE.Color(sceneBackground);
@@ -23,6 +24,8 @@ function init() {
     })
     
     material.side = THREE.BackSide;
+
+
 
     mesh = new THREE.Mesh( geometry, material );
     mesh.scale.set(160,160,160)
@@ -41,6 +44,9 @@ function init() {
     controls.rotateSpeed = 0.55; 
     controls.maxDistance = 170;
     controls.minDistance = 38;
+    // controls.autoRotate = true;
+    controls.enableDamping = true
+    controls.autoRotateSpeed = 2;
 
     controls.update();
     scene.add( new THREE.AmbientLight( 0x222222 ) );
@@ -60,12 +66,17 @@ let light = () => {
         addLight.castShadow = true;
         scene.add(addLight)
     })
+
+    let AmbientLight = new THREE.AmbientLight (0x404040, 8);
+    scene.add( AmbientLight )
 }
 light();
 
 function animate() {
-	requestAnimationFrame( animate );
-	renderer.render( scene, camera );
+    requestAnimationFrame( animate );
+    controls.update();
+    renderer.render( scene, camera );
+    
 }
 
 const handleResize = () => {
@@ -148,3 +159,25 @@ const elementCloning = () => {
 const functionAfterLoadingModels = () => {
     elementCloning();
 }
+
+// right menu
+document.querySelector('.auto-rotation').addEventListener('click', () => {
+    if (controls.autoRotate == false) {
+        controls.autoRotate = true;
+    }
+    else {
+        controls.autoRotate = false;
+    }
+})
+
+document.querySelector('.full-screen').addEventListener('click', () => document.documentElement.requestFullscreen())
+
+document.querySelector('.turn-off-the-menu').addEventListener('click', () => {
+    if (document.querySelector('.right-menu-bottom').style.display == "none") {
+        document.querySelector('.right-menu-bottom').style.display = "flex"
+    }
+    else {
+        document.querySelector('.right-menu-bottom').style.display = "none"
+    }
+})
+

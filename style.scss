@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    overflow: hidden;
+}
+
 canvas {
     cursor: grab;
 }
@@ -21,4 +25,38 @@ canvas {
 
 .loading-screen-none {
     display: none;
+}
+
+.right-menu {
+    height: 100%;
+    width: 50px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    right: 0;
+    flex-direction: column;
+    .right-menu-container {
+        background-color: rgba(255, 0, 0, 0);
+        border: none;
+        margin: 5px 0px 5px 0px;
+    }
+    .right-menu-span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        font-size: 22px;
+        background-color: black;
+        color: white;
+        border-radius: 100%;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .right-menu-bottom {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
 }
