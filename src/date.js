@@ -103,39 +103,48 @@ export const modelInformation = {
     lights: {
         DirectionalLight: {
             "centerLight": {
-                color: 0,
-                power: 0,
+                color: "white",
+                power: 1.5,
                 position_x: 0,
-                position_y: 0,
+                position_y: 15,
                 position_z: 0
             },
             "rightLight": {
-                color: 0,
-                power: 0,
-                position_x: 0,
-                position_y: 0,
+                color: "white",
+                power: 0.8,
+                position_x: 30,
+                position_y: 3,
                 position_z: 0
             },
             "leftLight": {
-                color: 0,
-                power: 0,
-                position_x: 0,
-                position_y: 0,
+                color: "white",
+                power: 0.8,
+                position_x: -30,
+                position_y: 3,
                 position_z: 0
             },
             "frontLight": {
-                color: 0,
-                power: 0,
+                color: "white",
+                power: 0.8,
                 position_x: 0,
-                position_y: 0,
-                position_z: 0
+                position_y: 3,
+                position_z: -30
             },
             "backLight": {
-                color: 0,
-                power: 0,
+                color: "white",
+                power: 0.8,
                 position_x: 0,
-                position_y: 0,
-                position_z: 0
+                position_y: 3,
+                position_z: 30
+            }
+        },
+        AmbientLight: {
+            "backLight1": {
+                color: "white",
+                power: 0.8,
+                position_x: 0,
+                position_y: 3,
+                position_z: 30
             }
         }
     },
@@ -158,119 +167,5 @@ export const modelInformation = {
         //     visible: true
         // },
         // ==============================
-
-        // "nameOfTheClones1": {
-        //     nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
-        //     cloneNameId: "default",
-        //     scale_x: 0.04,
-        //     scale_y: 0.04,
-        //     scale_z: 0.04,
-        //     position_x: 0,
-        //     position_y: 0,
-        //     position_z: -120,
-        //     rotation_x: 0,
-        //     rotation_y: 0,
-        //     rotation_z: 0,
-        //     visible: true
-        // },
-        // "nameOfTheClones2": {
-        //     nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
-        //     cloneNameId: "default",
-        //     scale_x: 0.04,
-        //     scale_y: 0.04,
-        //     scale_z: 0.04,
-        //     position_x: 0,
-        //     position_y: 0,
-        //     position_z: 120,
-        //     rotation_x: 0,
-        //     rotation_y: 0,
-        //     rotation_z: 0,
-        //     visible: true
-        // },
-        // "nameOfTheClones3": {
-        //     nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
-        //     cloneNameId: "default",
-        //     scale_x: 0.04,
-        //     scale_y: 0.04,
-        //     scale_z: 0.04,
-        //     position_x: 120,
-        //     position_y: 0,
-        //     position_z: 0,
-        //     rotation_x: 0,
-        //     rotation_y: 0,
-        //     rotation_z: 0,
-        //     visible: true
-        // },
-        // "nameOfTheClones4": {
-        //     nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
-        //     cloneNameId: "default",
-        //     scale_x: 0.04,
-        //     scale_y: 0.04,
-        //     scale_z: 0.04,
-        //     position_x: -120,
-        //     position_y: 0,
-        //     position_z: 0,
-        //     rotation_x: 0,
-        //     rotation_y: 0,
-        //     rotation_z: 0,
-        //     visible: true
-        // },
-
-        // "nameOfTheClones55": {
-        //     nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
-        //     cloneNameId: "default",
-        //     scale_x: 0.04,
-        //     scale_y: 0.04,
-        //     scale_z: 0.04,
-        //     position_x: 120,
-        //     position_y: 0,
-        //     position_z: -120,
-        //     rotation_x: 0,
-        //     rotation_y: 0,
-        //     rotation_z: 0,
-        //     visible: true
-        // },
-        // "nameOfTheClones216216": {
-        //     nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
-        //     cloneNameId: "default",
-        //     scale_x: 0.04,
-        //     scale_y: 0.04,
-        //     scale_z: 0.04,
-        //     position_x: -120,
-        //     position_y: 0,
-        //     position_z: 120,
-        //     rotation_x: 0,
-        //     rotation_y: 0,
-        //     rotation_z: 0,
-        //     visible: true
-        // },
-        // "nameOfTheClones34214": {
-        //     nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
-        //     cloneNameId: "default",
-        //     scale_x: 0.04,
-        //     scale_y: 0.04,
-        //     scale_z: 0.04,
-        //     position_x: -120,
-        //     position_y: 0,
-        //     position_z: -120,
-        //     rotation_x: 0,
-        //     rotation_y: 0,
-        //     rotation_z: 0,
-        //     visible: true
-        // },
-        // "nameOfTheClones46216": {
-        //     nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
-        //     cloneNameId: "default",
-        //     scale_x: 0.04,
-        //     scale_y: 0.04,
-        //     scale_z: 0.04,
-        //     position_x: 120,
-        //     position_y: 0,
-        //     position_z: 120,
-        //     rotation_x: 0,
-        //     rotation_y: 0,
-        //     rotation_z: 0,
-        //     visible: true
-        // },
     }
 };

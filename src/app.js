@@ -49,37 +49,17 @@ function init() {
 }
 
 let light = () => {
-    const lightCenter = new THREE.DirectionalLight( 0xffffff, 1 );
-    lightCenter.castShadow = true;
-    lightCenter.position.x = 0;
-    lightCenter.position.y = 15;
-    lightCenter.position.z = 0;
-    scene.add( lightCenter );
+    const lights = Object.getOwnPropertyNames(modelInformation["lights"]["DirectionalLight"])
+    lights.forEach(lightsValue => {
+        let individualLights = modelInformation["lights"]["DirectionalLight"][lightsValue]
 
-    const light = new THREE.DirectionalLight( 0xffffff, 1 );
-    light.castShadow = true;
-    light.position.x = 0;
-    light.position.y = 15;
-    light.position.z = -30;
-    scene.add( light );
-
-    const lightSecond = new THREE.DirectionalLight( 0xffffff, 1 );
-    lightSecond.position.x = 0;
-    lightSecond.position.y = 2;
-    lightSecond.position.z = 30;
-    scene.add(lightSecond);
-
-    const lightThird = new THREE.DirectionalLight( 0xffffff, 1 );
-    lightThird.position.x = 30;
-    lightThird.position.y = 2;
-    lightThird.position.z = 0;
-    scene.add(lightThird);
-
-    const lightFourth = new THREE.DirectionalLight( 0xffffff, 1 );
-    lightFourth.position.x = -30;
-    lightFourth.position.y = 2;
-    lightFourth.position.z = 0;
-    scene.add(lightFourth);
+        let addLight = new THREE.DirectionalLight( individualLights.color, individualLights.power );
+        addLight.position.x = individualLights["position_x"]
+        addLight.position.y = individualLights["position_y"]
+        addLight.position.z = individualLights["position_z"]
+        addLight.castShadow = true;
+        scene.add(addLight)
+    })
 }
 light();
 
