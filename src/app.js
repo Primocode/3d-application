@@ -105,7 +105,6 @@ const loadingModels = () => {
         Object.getOwnPropertyNames(modelInformation["models"][modelCategory]).forEach(categoryValues => {
             const modelValues = modelInformation["models"][modelCategory][categoryValues]
             theModelThatIsBeingLoaded.push(modelValues.folderName)
-            console.log(modelValues)
             loader.load(`./models/${modelValues.folderName}/scene.gltf`, function(gltf) {
                 let models = gltf.scene.children[0]
                 models.name = modelValues.folderName
@@ -128,13 +127,11 @@ loadingModels();
 
 const checkingTheLoadingOfModels = () => {
     let numberOfModelsLoaded = 0;
-    console.log(theModelThatIsBeingLoaded);
     theModelThatIsBeingLoaded.forEach(folderModelName => {
         if (scene.getObjectByName(folderModelName)) {
             numberOfModelsLoaded++
             if (numberOfModelsLoaded == theModelThatIsBeingLoaded.length) {
                 clearInterval(repeating)
-                console.log("Wszystkie modele zostały załadowane")
                 document.querySelector('.loading-screen').className = "loading-screen-none"
                 functionAfterLoadingModels();
             }
@@ -147,26 +144,29 @@ if (theModelThatIsBeingLoaded.length == 0) {
     clearInterval(repeating)
 }
 
-let cloneListId = [];
+const elementCloning = () => {
 
-let wartosci = ["35", "95"]
-    
+    Object.getOwnPropertyNames(modelInformation["copiedItems"]).forEach(item => {
+        const nameFolderToClone = modelInformation["copiedItems"][item].nameFolderOfTheItemToBeCoopied
+        let randomCharacters = Math.random().toString(36).substring(1)
+        modelInformation["copiedItems"][item].cloneNameId = nameFolderToClone + randomCharacters
+
+        const cloneElementValue = modelInformation["copiedItems"][item]
+
+        let cloneElement = scene.getObjectByName(nameFolderToClone).clone();
+
+        cloneElement.position.x = cloneElementValue["position_x"];
+        cloneElement.position.y = cloneElementValue["position_y"];
+        cloneElement.position.z = cloneElementValue["position_z"];
+
+        cloneElement.scale.x = cloneElementValue["scale_x"];
+        cloneElement.scale.y = cloneElementValue["scale_y"];
+        cloneElement.scale.z = cloneElementValue["scale_z"];
+        cloneElement.visible = cloneElementValue["visible"]
+        scene.add(cloneElement);
+    })
+}
+
 const functionAfterLoadingModels = () => {
-    // console.log(scene.getObjectByName("HLB-Milano"))
-    // for (let i = 0; i < 2; i++) {
-    //     let cloneElement = scene.getObjectByName("HLB-Milano").clone()
-    //     cloneElement.position.x = wartosci[i]
-    //     scene.add(cloneElement)
-    //     console.log("ile?")
-    // }
-
-
-
-    // let newBed = scene.getObjectByName("HLB-Milano").clone();
-
-    // console.log(newBed)
-
-    // newBed.position.x = 35;
-
-    // scene.add(newBed)
+    elementCloning();
 }

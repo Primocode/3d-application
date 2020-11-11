@@ -38,20 +38,118 @@ export const modelInformation = {
 
     },
     copiedItems: {
-        "HLB-Milano": {
-            nameOfTheClones: {
-                cloneName: "nazwa klona",
-                scale_x: 0.03,
-                scale_y: 0.03,
-                scale_z: 0.03,
-                position_x: -25,
-                position_y: 0,
-                position_z: -140,
-                rotation_x: 0,
-                rotation_y: 0,
-                rotation_z: 0,
-                visible: true
-            }
-        }
+        "nameOfTheClones1": {
+            nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
+            cloneNameId: "default",
+            scale_x: 0.04,
+            scale_y: 0.04,
+            scale_z: 0.04,
+            position_x: 0,
+            position_y: 0,
+            position_z: -120,
+            rotation_x: 0,
+            rotation_y: 0,
+            rotation_z: 0,
+            visible: true
+        },
+        "nameOfTheClones2": {
+            nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
+            cloneNameId: "default",
+            scale_x: 0.04,
+            scale_y: 0.04,
+            scale_z: 0.04,
+            position_x: 0,
+            position_y: 0,
+            position_z: 120,
+            rotation_x: 0,
+            rotation_y: 0,
+            rotation_z: 0,
+            visible: true
+        },
+        "nameOfTheClones3": {
+            nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
+            cloneNameId: "default",
+            scale_x: 0.04,
+            scale_y: 0.04,
+            scale_z: 0.04,
+            position_x: 120,
+            position_y: 0,
+            position_z: 0,
+            rotation_x: 0,
+            rotation_y: 0,
+            rotation_z: 0,
+            visible: true
+        },
+        "nameOfTheClones4": {
+            nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
+            cloneNameId: "default",
+            scale_x: 0.04,
+            scale_y: 0.04,
+            scale_z: 0.04,
+            position_x: -120,
+            position_y: 0,
+            position_z: 0,
+            rotation_x: 0,
+            rotation_y: 0,
+            rotation_z: 0,
+            visible: true
+        },
+
+        "nameOfTheClones55": {
+            nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
+            cloneNameId: "default",
+            scale_x: 0.04,
+            scale_y: 0.04,
+            scale_z: 0.04,
+            position_x: 120,
+            position_y: 0,
+            position_z: -120,
+            rotation_x: 0,
+            rotation_y: 0,
+            rotation_z: 0,
+            visible: true
+        },
+        "nameOfTheClones216216": {
+            nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
+            cloneNameId: "default",
+            scale_x: 0.04,
+            scale_y: 0.04,
+            scale_z: 0.04,
+            position_x: -120,
+            position_y: 0,
+            position_z: 120,
+            rotation_x: 0,
+            rotation_y: 0,
+            rotation_z: 0,
+            visible: true
+        },
+        "nameOfTheClones34214": {
+            nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
+            cloneNameId: "default",
+            scale_x: 0.04,
+            scale_y: 0.04,
+            scale_z: 0.04,
+            position_x: -120,
+            position_y: 0,
+            position_z: -120,
+            rotation_x: 0,
+            rotation_y: 0,
+            rotation_z: 0,
+            visible: true
+        },
+        "nameOfTheClones46216": {
+            nameFolderOfTheItemToBeCoopied: "Substance-Wood-Floor",
+            cloneNameId: "default",
+            scale_x: 0.04,
+            scale_y: 0.04,
+            scale_z: 0.04,
+            position_x: 120,
+            position_y: 0,
+            position_z: 120,
+            rotation_x: 0,
+            rotation_y: 0,
+            rotation_z: 0,
+            visible: true
+        },
     }
 };
