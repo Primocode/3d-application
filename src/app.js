@@ -158,6 +158,7 @@ const elementCloning = () => {
 
 const functionAfterLoadingModels = () => {
     elementCloning();
+    generatingTheMenu();
 }
 
 // right menu
@@ -180,4 +181,30 @@ document.querySelector('.turn-off-the-menu').addEventListener('click', () => {
         document.querySelector('.right-menu-bottom').style.display = "none"
     }
 })
+
+const generatingTheMenu = () => {
+    const data = modelInformation["models"]["modelsToDisplay"]
+    const names = Object.getOwnPropertyNames(modelInformation["models"]["modelsToDisplay"])
+    names.forEach(value => {
+        const container = document.querySelector('.models-to-choose-from-container')
+
+        const modelToChooseFrom = document.createElement('div');
+        modelToChooseFrom.className = "model-to-choose-from";
+        container.appendChild(modelToChooseFrom);
+    
+        const modelToChoseFromImg = document.createElement('div');
+        modelToChoseFromImg.className = "model-to-chose-from-img";
+        modelToChooseFrom.appendChild(modelToChoseFromImg)
+    
+        const imgInModelToChoseFromImg = document.createElement('img');
+        imgInModelToChoseFromImg.src = `models/${data[value].folderName}/${data[value].imgName}.png`
+        modelToChoseFromImg.appendChild(imgInModelToChoseFromImg)
+    
+        const h3inModelToChoseFromImg = document.createElement('h3');
+        h3inModelToChoseFromImg.className = "model-to-choose-from-h3"
+        h3inModelToChoseFromImg.textContent = data[value].nameTheItem;
+        modelToChooseFrom.appendChild(h3inModelToChoseFromImg) 
+    })
+}
+
 

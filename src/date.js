@@ -41,7 +41,7 @@ export const modelInformation = {
             "Table-and-chairs":  {
                 folderName: "Table-and-chairs",
                 nameTheItem: "Stół i krzesła",
-                imgName: "", 
+                imgName: "Table-and-chairs", 
                 scale_x: 25,
                 scale_y: 25,
                 scale_z: 25,
@@ -56,7 +56,7 @@ export const modelInformation = {
             "Trim-sheet-example":  {
                 folderName: "Trim-sheet-example",
                 nameTheItem: "Mały stolik",
-                imgName: "", 
+                imgName: "Trim-sheet-example", 
                 scale_x: 0.4,
                 scale_y: 0.4,
                 scale_z: 0.4,
@@ -71,7 +71,7 @@ export const modelInformation = {
             "Victorian-Lounge-Sofa":  {
                 folderName: "Victorian-Lounge-Sofa",
                 nameTheItem: "Sofa",
-                imgName: "", 
+                imgName: "Victorian-Lounge-Sofa", 
                 scale_x: 60,
                 scale_y: 60,
                 scale_z: 60,
@@ -86,7 +86,7 @@ export const modelInformation = {
             "Wolf-rokoko-table":  {
                 folderName: "Wolf-rokoko-table",
                 nameTheItem: "Stół",
-                imgName: "", 
+                imgName: "Wolf-rokoko-table", 
                 scale_x: 4,
                 scale_y: 4,
                 scale_z: 4,
