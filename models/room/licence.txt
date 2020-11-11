@@ -1,0 +1,10 @@
+source for the project : https://sketchfab.com/3d-models/conference-room1-b69e2a5dd7de4d7a8e091768d54a63e6
+
+title: Conference Room1
+
+licence source: 
+CC 
+https://creativecommons.org/licenses/by/4.0/
+
+author source: https://sketchfab.com/mozillareality 
+autohr's name: mozillareality

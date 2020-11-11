@@ -4,16 +4,14 @@ import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.
 
 import { modelInformation } from './date.js';
 
-
 let camera, scene, renderer, controls;
 let geometry, material, mesh;
 
 init();
 animate();
-
 function init() {
-    camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
-    camera.position.set( 10, 100, 150 );
+    camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera.position.set( 10, 150, 350 );
 
     const sceneBackground = "#fafafa";
     scene = new THREE.Scene();
@@ -31,18 +29,19 @@ function init() {
     mesh.position.y = 158;
     mesh.receiveShadow = true;
 
-	scene.add( mesh );
+	// scene.add( mesh );
 
-	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true, } );
 	renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
     renderer.shadowMap.enabled = true;
     
     controls = new OrbitControls( camera, renderer.domElement );
     controls.maxPolarAngle = 1.50; 
-    // controls.rotateSpeed = 0.35; 
+    controls.rotateSpeed = 0.55; 
     controls.maxDistance = 170;
     controls.minDistance = 38;
+
     controls.update();
     scene.add( new THREE.AmbientLight( 0x222222 ) );
 
@@ -50,33 +49,33 @@ function init() {
 }
 
 let light = () => {
-    const lightCenter = new THREE.DirectionalLight( 0xffffff, 0.2 );
+    const lightCenter = new THREE.DirectionalLight( 0xffffff, 1 );
     lightCenter.castShadow = true;
     lightCenter.position.x = 0;
     lightCenter.position.y = 15;
     lightCenter.position.z = 0;
     scene.add( lightCenter );
 
-    const light = new THREE.DirectionalLight( 0xffffff, 0.7 );
+    const light = new THREE.DirectionalLight( 0xffffff, 1 );
     light.castShadow = true;
     light.position.x = 0;
     light.position.y = 15;
     light.position.z = -30;
     scene.add( light );
 
-    const lightSecond = new THREE.DirectionalLight( 0xffffff, 0.7 );
+    const lightSecond = new THREE.DirectionalLight( 0xffffff, 1 );
     lightSecond.position.x = 0;
     lightSecond.position.y = 2;
     lightSecond.position.z = 30;
     scene.add(lightSecond);
 
-    const lightThird = new THREE.DirectionalLight( 0xffffff, 0.7 );
+    const lightThird = new THREE.DirectionalLight( 0xffffff, 1 );
     lightThird.position.x = 30;
     lightThird.position.y = 2;
     lightThird.position.z = 0;
     scene.add(lightThird);
 
-    const lightFourth = new THREE.DirectionalLight( 0xffffff, 0.7 );
+    const lightFourth = new THREE.DirectionalLight( 0xffffff, 1 );
     lightFourth.position.x = -30;
     lightFourth.position.y = 2;
     lightFourth.position.z = 0;
@@ -145,7 +144,6 @@ if (theModelThatIsBeingLoaded.length == 0) {
 }
 
 const elementCloning = () => {
-
     Object.getOwnPropertyNames(modelInformation["copiedItems"]).forEach(item => {
         const nameFolderToClone = modelInformation["copiedItems"][item].nameFolderOfTheItemToBeCoopied
         let randomCharacters = Math.random().toString(36).substring(1)

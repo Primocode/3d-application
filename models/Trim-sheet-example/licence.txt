@@ -1,0 +1,10 @@
+source for the project : https://sketchfab.com/3d-models/trim-sheet-example-dresser-ad55b740458f4de487ebfcb35908cd38
+
+title: Trim Sheet Example Dresser
+
+licence source: 
+CC shareAlike
+https://creativecommons.org/licenses/by-sa/4.0/
+
+author source: https://sketchfab.com/ChrisSweetwood
+autohr's name: Chris Sweetwood

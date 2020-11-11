@@ -1,0 +1,10 @@
+source for the project : https://sketchfab.com/3d-models/table-and-chairs-3d89401bfcdc482c990d2b9536dc3c6d
+
+title: Table and Chairs
+
+licence source: 
+CC 
+https://creativecommons.org/licenses/by/4.0/
+
+author source: https://sketchfab.com/Graham.Jolliffe
+autohr's name: Graham
