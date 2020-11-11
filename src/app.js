@@ -36,7 +36,7 @@ function init() {
 
 	renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true, } );
 	renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( renderer.domElement );
+    document.querySelector('main').appendChild( renderer.domElement );
     renderer.shadowMap.enabled = true;
     
     controls = new OrbitControls( camera, renderer.domElement );
