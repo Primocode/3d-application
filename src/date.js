@@ -25,6 +25,7 @@ export const modelInformation = {
             "room":  {
                 folderName: "room",
                 nameTheItem: "Pokój",
+                imgName: "room",
                 scale_x: 0.4,
                 scale_y: 0.4,
                 scale_z: 0.4,
@@ -100,6 +101,18 @@ export const modelInformation = {
             },
         }
     },
+
+    backgrounds: {
+        white: {
+            color: "white",
+            nameColor: "Biały"
+        },
+        red: {
+            color: "red",
+            nameColor: "Czerwony"
+        }
+    },
+
     lights: {
         DirectionalLight: {
             "centerLight": {

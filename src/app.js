@@ -47,7 +47,7 @@ function init() {
     controls.update();
     scene.add( new THREE.AmbientLight( 0x222222 ) );
 
-    scene.add( new THREE.AxesHelper( 20 ) );
+    // scene.add( new THREE.AxesHelper( 20 ) );
 }
 
 let light = () => {
@@ -159,8 +159,10 @@ const elementCloning = () => {
 
 const functionAfterLoadingModels = () => {
     elementCloning(); // Klonowanie elementów jeżeli jakieś są
-    generatingTheMenu(); // generowanie menu
+    generatingModelsInTheMenu();
+    generatingABackgroundInTheMenu();
     toDisplayTheMenu(); // ustawianie eventu po wygenerowaniu menu
+    // immediateDisplayOfCategories();
 } 
 
 // // right menu
@@ -184,11 +186,11 @@ const functionAfterLoadingModels = () => {
 //     }
 // })
 
-const generatingTheMenu = () => {
+const generatingModelsInTheMenu = () => {
     const data = modelInformation["models"]["modelsToDisplay"]
     const names = Object.getOwnPropertyNames(modelInformation["models"]["modelsToDisplay"])
+    const container = document.querySelector('.models-to-choose-from-container')
     names.forEach(value => {
-        const container = document.querySelector('.models-to-choose-from-container')
 
         const modelToChooseFrom = document.createElement('div');
         modelToChooseFrom.className = "model-to-choose-from";
@@ -209,6 +211,8 @@ const generatingTheMenu = () => {
         h3inModelToChoseFromImg.textContent = data[value].nameTheItem;
         modelToChooseFrom.appendChild(h3inModelToChoseFromImg) 
     })
+
+    container.classList.add("left-menu-category-inactive")
 }
 
 const displayingSelectedModels = (folderName) => {
@@ -231,3 +235,66 @@ const displayingModelsFromTheMenu = (e) => {
 const toDisplayTheMenu = () => {
     document.querySelectorAll('.selecting-the-model').forEach(item => item.addEventListener('click', displayingModelsFromTheMenu))
 }
+
+const generatingABackgroundInTheMenu = () => {
+    const dataModels = modelInformation["models"]["fixedModels"]
+    const names = Object.getOwnPropertyNames(modelInformation["models"]["fixedModels"])
+    const container = document.querySelector('.backgrounds-of-your-choice-from-container')
+    names.forEach(value => {
+
+        const backgroundsOfYourChoice = document.createElement('div');
+        backgroundsOfYourChoice.className = "backgrounds-of-your-choice"
+        container.appendChild(backgroundsOfYourChoice)
+    
+        const backgroundOfYourChoiceImg = document.createElement('div');
+        backgroundOfYourChoiceImg.className = "backgrounds-of-your-choice-img";
+        backgroundsOfYourChoice.appendChild(backgroundOfYourChoiceImg)
+    
+        const img = document.createElement('img');
+        img.src = `models/${dataModels[value].folderName}/${dataModels[value].imgName}.png`;
+        backgroundOfYourChoiceImg.appendChild(img)
+    
+        const h3InBackgroundOfYourChoice = document.createElement('h3');
+        h3InBackgroundOfYourChoice.textContent = dataModels[value].nameTheItem
+        backgroundsOfYourChoice.appendChild(h3InBackgroundOfYourChoice)
+
+    })
+    const dataNamesBackgrounds = Object.getOwnPropertyNames(modelInformation["backgrounds"])
+
+    dataNamesBackgrounds.forEach(name => {
+        container.classList.add("left-menu-category-inactive")
+
+        const backgroundsOfYourChoice = document.createElement('div');
+        backgroundsOfYourChoice.className = "backgrounds-of-your-choice"
+        container.appendChild(backgroundsOfYourChoice)
+    
+        const backgroundOfYourChoiceImg = document.createElement('div');
+        backgroundOfYourChoiceImg.className = "backgrounds-of-your-choice-img";
+        backgroundsOfYourChoice.appendChild(backgroundOfYourChoiceImg)
+    
+        const color = document.createElement('div');
+        color.className = "backgrounds-colors"
+        color.style.background = name
+        backgroundOfYourChoiceImg.appendChild(color)
+    
+        const h3InBackgroundOfYourChoice = document.createElement('h3');
+        h3InBackgroundOfYourChoice.textContent = modelInformation["backgrounds"][name].nameColor
+        backgroundsOfYourChoice.appendChild(h3InBackgroundOfYourChoice)
+    })
+}
+
+const selectingACategoryFromTheMenu = (e) => {
+    document.querySelectorAll('.selecting-a-category-in-the-menu').forEach(item => {
+        item.classList.add("left-menu-category-inactive")
+    })
+
+    document.querySelector(`.${e.target.dataset.category}`).classList.remove(`left-menu-category-inactive`)
+}
+
+document.querySelectorAll('.main-menu-left-btn').forEach(item => item.addEventListener('click', selectingACategoryFromTheMenu))
+
+// const immediateDisplayOfCategories = () => {
+//     const firstBtnInLeftMenu = document.querySelectorAll('.main-menu-left-btn')[0].dataset.category
+    
+//     document.querySelector('.')
+// }

@@ -66,7 +66,7 @@ canvas {
   background-color: #fafafa;
 }
 
-.main-menu-left .main-menu-left-container .main-menu-left-btn-style {
+.main-menu-left .main-menu-left-container .main-menu-left-btn {
   width: 100%;
   padding: 10px 0px 10px 0px;
   background-color: white;
@@ -144,6 +144,67 @@ canvas {
 
 .main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from h3 {
   color: #3b3b3b;
+}
+
+.main-menu-left .main-menu-left-container h3 {
+  font-size: 14px;
+  color: #181818;
+  margin-top: 5px;
+}
+
+.main-menu-left .main-menu-left-container .backgrounds-of-your-choice-from-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 105px;
+}
+
+.main-menu-left .main-menu-left-container .backgrounds-of-your-choice-from-container .backgrounds-of-your-choice {
+  width: 200px;
+  height: 200px;
+  background-color: #ededed;
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+
+.main-menu-left .main-menu-left-container .backgrounds-of-your-choice-from-container .backgrounds-of-your-choice .backgrounds-of-your-choice-img {
+  background-color: #ededed;
+  width: 170px;
+  height: 170px;
+}
+
+.main-menu-left .main-menu-left-container .backgrounds-of-your-choice-from-container .backgrounds-of-your-choice .backgrounds-of-your-choice-img img {
+  width: 170px;
+  height: 170px;
+}
+
+.main-menu-left .main-menu-left-container .backgrounds-of-your-choice-from-container .backgrounds-of-your-choice .backgrounds-of-your-choice-img .backgrounds-colors {
+  width: 170px;
+  height: 170px;
+}
+
+.main-menu-left .main-menu-left-container .left-menu-category-inactive {
+  display: none;
 }
 
 .bottom-menu {
