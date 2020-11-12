@@ -315,3 +315,16 @@ const backgroundSetting = (e) => {
     }
 }
 
+const selectingButtons = (e) => {
+
+    document.querySelectorAll('.main-menu-left-btn').forEach(item => {
+        item.classList.remove('menu-left-btn-active')
+    })
+
+    e.target.classList.add('menu-left-btn-active')
+
+    // e.target.dataset.category.classList.add('menu-left-btn-active')
+}
+
+
+document.querySelectorAll('.main-menu-left-btn').forEach(item => item.addEventListener('click', selectingButtons))
