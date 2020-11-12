@@ -316,15 +316,40 @@ const backgroundSetting = (e) => {
 }
 
 const selectingButtons = (e) => {
-
     document.querySelectorAll('.main-menu-left-btn').forEach(item => {
         item.classList.remove('menu-left-btn-active')
     })
-
     e.target.classList.add('menu-left-btn-active')
-
-    // e.target.dataset.category.classList.add('menu-left-btn-active')
 }
-
-
 document.querySelectorAll('.main-menu-left-btn').forEach(item => item.addEventListener('click', selectingButtons))
+
+
+//  ===================== right menu
+
+const autoRotate = () => {
+    if (controls.autoRotate == true) {
+        controls.autoRotate = false;
+        document.querySelector('.auto-rotation').classList.remove('function-style-active')
+    }
+    else {
+        controls.autoRotate = true;
+        document.querySelector('.auto-rotation').classList.add('function-style-active')
+    }
+}
+document.querySelector('.auto-rotation').addEventListener('click', autoRotate)
+
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement &&    // alternative standard method
+        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+        document.querySelector('.full-screen').classList.add('function-style-active')
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+        document.querySelector('.full-screen').classList.remove('function-style-active')
+      }
+    }
+  }
+  document.querySelector('.full-screen').addEventListener('click', toggleFullScreen)

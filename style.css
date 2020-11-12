@@ -118,7 +118,6 @@ canvas {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  cursor: pointer;
 }
 
 .main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img {
@@ -130,6 +129,7 @@ canvas {
 .main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img .selecting-the-model {
   width: 170px;
   height: 170px;
+  cursor: pointer;
 }
 
 .main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img .selecting-the-model:hover {
@@ -184,7 +184,6 @@ canvas {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  cursor: pointer;
 }
 
 .main-menu-left .main-menu-left-container .backgrounds-of-your-choice-from-container .backgrounds-of-your-choice .backgrounds-of-your-choice-img {
@@ -201,6 +200,7 @@ canvas {
 .main-menu-left .main-menu-left-container .backgrounds-of-your-choice-from-container .backgrounds-of-your-choice .backgrounds-of-your-choice-img .backgrounds {
   width: 170px;
   height: 170px;
+  cursor: pointer;
 }
 
 .main-menu-left .main-menu-left-container .left-menu-category-inactive {
@@ -265,5 +265,10 @@ canvas {
   border-radius: 20px;
   color: #0099ff;
   cursor: pointer;
+}
+
+.right-menu .right-menu-bottom .functions-container .function-style-active {
+  background-color: #0099ff;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
