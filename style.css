@@ -126,9 +126,19 @@ canvas {
   height: 170px;
 }
 
-.main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img img {
+.main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img .selecting-the-model {
   width: 170px;
   height: 170px;
+}
+
+.main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img .selecting-the-model:hover {
+  border: 1px solid #9a9a9a;
+}
+
+.main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img .selecting-the-model-active {
+  width: 170px;
+  height: 170px;
+  border: 1px solid #9a9a9a;
 }
 
 .main-menu-left .main-menu-left-container .models-to-choose-from-container .model-to-choose-from h3 {

@@ -157,9 +157,10 @@ const elementCloning = () => {
 }
 
 const functionAfterLoadingModels = () => {
-    elementCloning();
-    generatingTheMenu();
-}
+    elementCloning(); // Klonowanie elementów jeżeli jakieś są
+    generatingTheMenu(); // generowanie menu
+    toDisplayTheMenu(); // ustawianie eventu po wygenerowaniu menu
+} 
 
 // right menu
 document.querySelector('.auto-rotation').addEventListener('click', () => {
@@ -197,6 +198,8 @@ const generatingTheMenu = () => {
         modelToChooseFrom.appendChild(modelToChoseFromImg)
     
         const imgInModelToChoseFromImg = document.createElement('img');
+        imgInModelToChoseFromImg.dataset.folderName = data[value].folderName
+        imgInModelToChoseFromImg.className = "selecting-the-model"
         imgInModelToChoseFromImg.src = `models/${data[value].folderName}/${data[value].imgName}.png`
         modelToChoseFromImg.appendChild(imgInModelToChoseFromImg)
     
@@ -207,4 +210,27 @@ const generatingTheMenu = () => {
     })
 }
 
+const displayingSelectedModels = (folderName) => {
+    Object.getOwnPropertyNames(modelInformation["models"]["modelsToDisplay"]).forEach(item => {
+        scene.getObjectByName(item).visible = false;
+    })
 
+
+    scene.getObjectByName(folderName).visible = true;
+
+}
+
+const displayingModelsFromTheMenu = (e) => {
+    document.querySelectorAll('.selecting-the-model').forEach(item => {
+        item.className = "selecting-the-model"
+    })
+    // e.target.style.border = "1px solid #9a9a9a";
+    e.target.classList.add("selecting-the-model-active")
+
+    console.log(e.target.dataset.folderName);
+    displayingSelectedModels(e.target.dataset.folderName);
+}
+
+const toDisplayTheMenu = () => {
+    document.querySelectorAll('.selecting-the-model').forEach(item => item.addEventListener('click', displayingModelsFromTheMenu))
+}
