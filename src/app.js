@@ -252,6 +252,9 @@ const generatingABackgroundInTheMenu = () => {
     
         const img = document.createElement('img');
         img.src = `models/${dataModels[value].folderName}/${dataModels[value].imgName}.png`;
+        img.dataset.type = "models"
+        img.className = "backgrounds"
+        img.dataset.folderName = dataModels[value].folderName
         backgroundOfYourChoiceImg.appendChild(img)
     
         const h3InBackgroundOfYourChoice = document.createElement('h3');
@@ -273,14 +276,18 @@ const generatingABackgroundInTheMenu = () => {
         backgroundsOfYourChoice.appendChild(backgroundOfYourChoiceImg)
     
         const color = document.createElement('div');
-        color.className = "backgrounds-colors"
-        color.style.background = name
+        color.className = "backgrounds"
+        color.style.background = modelInformation["backgrounds"][name].color
+        color.dataset.type = "colors"
+        color.dataset.color = modelInformation["backgrounds"][name].color
         backgroundOfYourChoiceImg.appendChild(color)
     
         const h3InBackgroundOfYourChoice = document.createElement('h3');
         h3InBackgroundOfYourChoice.textContent = modelInformation["backgrounds"][name].nameColor
         backgroundsOfYourChoice.appendChild(h3InBackgroundOfYourChoice)
     })
+
+    document.querySelectorAll('.backgrounds').forEach(item => item.addEventListener('click', backgroundSetting))
 }
 
 const selectingACategoryFromTheMenu = (e) => {
@@ -293,8 +300,18 @@ const selectingACategoryFromTheMenu = (e) => {
 
 document.querySelectorAll('.main-menu-left-btn').forEach(item => item.addEventListener('click', selectingACategoryFromTheMenu))
 
-// const immediateDisplayOfCategories = () => {
-//     const firstBtnInLeftMenu = document.querySelectorAll('.main-menu-left-btn')[0].dataset.category
-    
-//     document.querySelector('.')
-// }
+const backgroundSetting = (e) => {
+    scene.background = new THREE.Color("white");
+    Object.getOwnPropertyNames(modelInformation["models"]["fixedModels"]).forEach(item => {
+        scene.getObjectByName(item).visible = false;
+    })
+
+    if (e.target.dataset.type == "colors") {
+        scene.background = new THREE.Color(e.target.dataset.color);
+    }
+
+    if (e.target.dataset.type == "models") {
+        scene.getObjectByName(e.target.dataset.folderName).visible = true;
+    }
+}
+
