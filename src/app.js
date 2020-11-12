@@ -13,7 +13,6 @@ function init() {
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10000 );
     camera.position.set( 10, 150, 350 );
 
-
     const sceneBackground = "#fafafa";
     scene = new THREE.Scene();
     scene.background = new THREE.Color(sceneBackground);
@@ -22,10 +21,7 @@ function init() {
     material = new THREE.MeshPhongMaterial({
         color: "white"
     })
-    
     material.side = THREE.BackSide;
-
-
 
     mesh = new THREE.Mesh( geometry, material );
     mesh.scale.set(160,160,160)
@@ -107,6 +103,11 @@ const loadingModels = () => {
                 models.scale.x = modelValues["scale_x"];
                 models.scale.y = modelValues["scale_y"];
                 models.scale.z = modelValues["scale_z"];
+
+                // models.rotation.x = modelValues["rotation_x"];
+                models.rotation.y = modelValues["rotation_y"];
+                models.rotation.z = modelValues["rotation_z"];
+
                 models.visible = modelValues["visible"]
                 scene.add(models);
             })
@@ -162,26 +163,26 @@ const functionAfterLoadingModels = () => {
     toDisplayTheMenu(); // ustawianie eventu po wygenerowaniu menu
 } 
 
-// right menu
-document.querySelector('.auto-rotation').addEventListener('click', () => {
-    if (controls.autoRotate == false) {
-        controls.autoRotate = true;
-    }
-    else {
-        controls.autoRotate = false;
-    }
-})
+// // right menu
+// document.querySelector('.auto-rotation').addEventListener('click', () => {
+//     if (controls.autoRotate == false) {
+//         controls.autoRotate = true;
+//     }
+//     else {
+//         controls.autoRotate = false;
+//     }
+// })
 
-document.querySelector('.full-screen').addEventListener('click', () => document.documentElement.requestFullscreen())
+// document.querySelector('.full-screen').addEventListener('click', () => document.documentElement.requestFullscreen())
 
-document.querySelector('.turn-off-the-menu').addEventListener('click', () => {
-    if (document.querySelector('.right-menu-bottom').style.display == "none") {
-        document.querySelector('.right-menu-bottom').style.display = "flex"
-    }
-    else {
-        document.querySelector('.right-menu-bottom').style.display = "none"
-    }
-})
+// document.querySelector('.turn-off-the-menu').addEventListener('click', () => {
+//     if (document.querySelector('.right-menu-bottom').style.display == "none") {
+//         document.querySelector('.right-menu-bottom').style.display = "flex"
+//     }
+//     else {
+//         document.querySelector('.right-menu-bottom').style.display = "none"
+//     }
+// })
 
 const generatingTheMenu = () => {
     const data = modelInformation["models"]["modelsToDisplay"]
@@ -214,17 +215,13 @@ const displayingSelectedModels = (folderName) => {
     Object.getOwnPropertyNames(modelInformation["models"]["modelsToDisplay"]).forEach(item => {
         scene.getObjectByName(item).visible = false;
     })
-
-
     scene.getObjectByName(folderName).visible = true;
-
 }
 
 const displayingModelsFromTheMenu = (e) => {
     document.querySelectorAll('.selecting-the-model').forEach(item => {
         item.className = "selecting-the-model"
     })
-    // e.target.style.border = "1px solid #9a9a9a";
     e.target.classList.add("selecting-the-model-active")
 
     console.log(e.target.dataset.folderName);

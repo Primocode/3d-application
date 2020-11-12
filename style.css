@@ -41,6 +41,7 @@ canvas {
   background-color: #ededed;
   border-right: 1px solid #e4e4e4;
   position: fixed;
+  z-index: 2;
 }
 
 .main-menu-left .main-menu-left-top {
@@ -145,59 +146,63 @@ canvas {
   color: #3b3b3b;
 }
 
+.bottom-menu {
+  width: 100%;
+  height: 100px;
+  background-color: red;
+  position: fixed;
+  bottom: 0;
+}
+
 .right-menu {
   height: 100%;
-  width: 50px;
+  width: 200px;
+  background-color: #ededed;
+  border-left: 1px solid #e4e4e4;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   right: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
-.right-menu .right-menu-container {
-  background-color: rgba(255, 0, 0, 0);
-  border: none;
-  margin: 5px 0px 5px 0px;
+.right-menu .right-menu-top {
+  margin: 15px;
 }
 
-.right-menu .right-menu-span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 40px;
-  width: 40px;
-  font-size: 22px;
-  background-color: black;
-  color: white;
-  border-radius: 100%;
-  justify-content: center;
-  cursor: pointer;
+.right-menu .right-menu-top h3 {
+  font-size: 17px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.right-menu .right-menu-top p {
+  color: #686868;
+  font-size: 13px;
 }
 
 .right-menu .right-menu-bottom {
+  margin: 0px 15px 0px 15px;
+}
+
+.right-menu .right-menu-bottom .functions-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0px 5px 0px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.right-menu .right-menu-bottom .functions-container .functions-style {
+  margin: 5px 0px 5px 0px;
+  width: 100%;
+  border: 1px solid #0099ff;
+  padding: 7px 15px 7px 15px;
+  border-radius: 20px;
+  color: #0099ff;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

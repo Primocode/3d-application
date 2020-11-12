@@ -51,7 +51,7 @@ export const modelInformation = {
                 rotation_x: 0,
                 rotation_y: 0,
                 rotation_z: 0,
-                visible: true,
+                visible: false,
             },
             "Trim-sheet-example":  {
                 folderName: "Trim-sheet-example",
@@ -80,7 +80,7 @@ export const modelInformation = {
                 position_z: 0,
                 rotation_x: 0,
                 rotation_y: 0,
-                rotation_z: 0,
+                rotation_z: -1.6,
                 visible: false,
             },
             "Wolf-rokoko-table":  {
