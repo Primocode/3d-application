@@ -165,6 +165,8 @@ const functionAfterLoadingModels = () => {
     generatingModelsInTheMenu();
     generatingABackgroundInTheMenu();
     toDisplayTheMenu(); // ustawianie eventu po wygenerowaniu menu
+    activationOfTheFirstMenu(); // wyświetlanie menu po lewej
+    displayingTheFirstModel(); // wyświetlanie pierwszego modelu
 } 
 
 const generatingModelsInTheMenu = () => {
@@ -331,3 +333,16 @@ document.querySelector('.auto-rotation').addEventListener('click', autoRotate)
     }
   }
   document.querySelector('.full-screen').addEventListener('click', toggleFullScreen)
+
+const activationOfTheFirstMenu = () => {
+    document.querySelectorAll('.main-menu-left-btn')[0].classList.add('menu-left-btn-active')
+    document.querySelector(`.${document.querySelectorAll('.main-menu-left-btn')[0].dataset.category}`).classList.remove(`left-menu-category-inactive`)
+}
+
+const displayingTheFirstModel = () => {
+    const firstModelInCategory = document.querySelectorAll('.selecting-the-model')[0].dataset.folderName 
+    scene.getObjectByName(firstModelInCategory).visible = true;
+}
+
+
+
