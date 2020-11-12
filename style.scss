@@ -13,8 +13,9 @@ canvas {
 }
 
 .loading-screen {
-    height: 50px;
-    background-color: orange;
+    z-index: 10;
+    height: 100vh;
+    background: radial-gradient(circle, rgb(92, 190, 255) 0%,rgb(0, 153, 255) 88%);
     width: 100%;
     position: fixed;
     display: flex;
@@ -22,7 +23,87 @@ canvas {
     align-items: center;
     color: white;
     font-size: 30px;
+    .loading-screen-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            font-size: 45px;
+        }
+        .result-loading {
+            margin-top: 10px;
+            font-weight: 900;
+            font-size: 17px;
+        }
+        .loader {
+            top: calc(50% - 32px);
+            left: calc(50% - 32px);
+            width: 94px;
+            height: 94px;
+            border-radius: 50%;
+            perspective: 800px;
+          }
+          
+          .inner {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;  
+          }
+          
+          .inner.one {
+            left: 0%;
+            top: 0%;
+            animation: rotate-one 1s linear infinite;
+            border-bottom: 5px solid #EFEFFA;
+          }
+          
+          .inner.two {
+            right: 0%;
+            top: 0%;
+            animation: rotate-two 1s linear infinite;
+            border-right: 5px solid #EFEFFA;
+          }
+          
+          .inner.three {
+            right: 0%;
+            bottom: 0%;
+            animation: rotate-three 1s linear infinite;
+            border-top: 5px solid #EFEFFA;
+          }
+          
+          @keyframes rotate-one {
+            0% {
+              transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+            }
+            100% {
+              transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+            }
+          }
+          
+          @keyframes rotate-two {
+            0% {
+              transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+            }
+            100% {
+              transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+            }
+          }
+          
+          @keyframes rotate-three {
+            0% {
+              transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+            }
+            100% {
+              transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+            }
+          }
+    }
+    
 }
+
 
 .loading-screen-none {
     display: none;

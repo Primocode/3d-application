@@ -128,6 +128,7 @@ const checkingTheLoadingOfModels = () => {
             }
         }
     })
+    document.querySelector('.result-loading').textContent = `Załadowano ${numberOfModelsLoaded} z ${theModelThatIsBeingLoaded.length} modeli 3D `
 }
 
 let repeating = setInterval(checkingTheLoadingOfModels, 100)
@@ -162,29 +163,7 @@ const functionAfterLoadingModels = () => {
     generatingModelsInTheMenu();
     generatingABackgroundInTheMenu();
     toDisplayTheMenu(); // ustawianie eventu po wygenerowaniu menu
-    // immediateDisplayOfCategories();
 } 
-
-// // right menu
-// document.querySelector('.auto-rotation').addEventListener('click', () => {
-//     if (controls.autoRotate == false) {
-//         controls.autoRotate = true;
-//     }
-//     else {
-//         controls.autoRotate = false;
-//     }
-// })
-
-// document.querySelector('.full-screen').addEventListener('click', () => document.documentElement.requestFullscreen())
-
-// document.querySelector('.turn-off-the-menu').addEventListener('click', () => {
-//     if (document.querySelector('.right-menu-bottom').style.display == "none") {
-//         document.querySelector('.right-menu-bottom').style.display = "flex"
-//     }
-//     else {
-//         document.querySelector('.right-menu-bottom').style.display = "none"
-//     }
-// })
 
 const generatingModelsInTheMenu = () => {
     const data = modelInformation["models"]["modelsToDisplay"]
@@ -322,7 +301,6 @@ const selectingButtons = (e) => {
     e.target.classList.add('menu-left-btn-active')
 }
 document.querySelectorAll('.main-menu-left-btn').forEach(item => item.addEventListener('click', selectingButtons))
-
 
 //  ===================== right menu
 
