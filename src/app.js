@@ -11,7 +11,7 @@ init();
 animate();
 function init() {
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10000 );
-    camera.position.set( 10, 150, 350 );
+    camera.position.set( 0, 150, 350 );
 
     const sceneBackground = "#fafafa";
     scene = new THREE.Scene();
@@ -33,8 +33,12 @@ function init() {
 	renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true, } );
 	renderer.setSize( window.innerWidth, window.innerHeight );
     document.querySelector('main').appendChild( renderer.domElement );
-    renderer.shadowMap.enabled = true;
-    
+
+    // ============== SHADOW ====================
+	renderer.shadowMap.enabled = true;
+	renderer.shadowMap.type = THREE.BasicShadowMap;
+    //  =============== SHADOW ========================
+
     controls = new OrbitControls( camera, renderer.domElement );
     controls.maxPolarAngle = 1.50; 
     controls.rotateSpeed = 0.55; 
@@ -59,7 +63,13 @@ let light = () => {
         addLight.position.x = individualLights["position_x"]
         addLight.position.y = individualLights["position_y"]
         addLight.position.z = individualLights["position_z"]
+
+        // ========= SHADOW =============
         addLight.castShadow = true;
+        addLight.shadow.camera.near = 5;
+        addLight.shadow.camera.far = 5;
+        // =========== SHADOW =============
+
         scene.add(addLight)
     })
 
@@ -95,6 +105,10 @@ const loadingModels = () => {
                 let models = gltf.scene.children[0]
                 models.name = modelValues.folderName
 
+                // ============== SHADOW =====================
+                models.receiveShadow = true;
+                models.castShadow = true;
+                // ============== SHADOW =====================
                 // default values
                 models.position.x = modelValues["position_x"];
                 models.position.y = modelValues["position_y"];
@@ -304,8 +318,6 @@ const selectingButtons = (e) => {
 }
 document.querySelectorAll('.main-menu-left-btn').forEach(item => item.addEventListener('click', selectingButtons))
 
-//  ===================== right menu
-
 const autoRotate = () => {
     if (controls.autoRotate == true) {
         controls.autoRotate = false;
@@ -319,8 +331,8 @@ const autoRotate = () => {
 document.querySelector('.auto-rotation').addEventListener('click', autoRotate)
 
   const toggleFullScreen = () => {
-    if (!document.fullscreenElement &&    // alternative standard method
-        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+    if (!document.fullscreenElement &&   
+        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) { 
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
         document.querySelector('.full-screen').classList.add('function-style-active')
@@ -340,8 +352,11 @@ const activationOfTheFirstMenu = () => {
 }
 
 const displayingTheFirstModel = () => {
-    const firstModelInCategory = document.querySelectorAll('.selecting-the-model')[0].dataset.folderName 
-    scene.getObjectByName(firstModelInCategory).visible = true;
+    if (document.querySelectorAll('.selecting-the-model')[0]) {
+        const firstModelInCategory = document.querySelectorAll('.selecting-the-model')[0].dataset.folderName 
+        scene.getObjectByName(firstModelInCategory).visible = true;
+    }
+
 }
 
 

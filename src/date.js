@@ -22,21 +22,6 @@ export const modelInformation = {
 
         // =========================================
         fixedModels: {
-            "Gachimuchi-room":  {
-                folderName: "Gachimuchi-room",
-                nameTheItem: "Sala",
-                imgName: "Gachimuchi-room",
-                scale_x: 0.2,
-                scale_y: 0.2,
-                scale_z: 0.2,
-                position_x: 0,
-                position_y: 0,
-                position_z: 0,
-                rotation_x: 0,
-                rotation_y: 0,
-                rotation_z: 0,
-                visible: false,
-            },
             "room":  {
                 folderName: "room",
                 nameTheItem: "Pokój",
@@ -127,7 +112,6 @@ export const modelInformation = {
             nameColor: "Śnieżny"
         }
     },
-
     lights: {
         DirectionalLight: {
             "centerLight": {
