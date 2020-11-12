@@ -128,7 +128,9 @@ const checkingTheLoadingOfModels = () => {
             }
         }
     })
-    document.querySelector('.result-loading').textContent = `Załadowano ${numberOfModelsLoaded} z ${theModelThatIsBeingLoaded.length} modeli 3D `
+    if (numberOfModelsLoaded >= 1) {
+        document.querySelector('.result-loading').textContent = `Załadowano ${numberOfModelsLoaded} z ${theModelThatIsBeingLoaded.length} modeli 3D `
+    }
 }
 
 let repeating = setInterval(checkingTheLoadingOfModels, 100)
@@ -206,8 +208,6 @@ const displayingModelsFromTheMenu = (e) => {
         item.className = "selecting-the-model"
     })
     e.target.classList.add("selecting-the-model-active")
-
-    console.log(e.target.dataset.folderName);
     displayingSelectedModels(e.target.dataset.folderName);
 }
 
