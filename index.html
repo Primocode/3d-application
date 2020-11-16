@@ -27,7 +27,10 @@
         </div>
        
     </div>
-    <header class="right-menu">
+    <header class="right-menu" id="menu-right">
+        <div class="right-menu-close-open">
+            <span class="fas fa-cog"></span>
+        </div>
         <div class="right-menu-top">
             <h3>Funkcję wyświetlania modeli 3D</h3>
             <p>Przy pomocy dodatkowych funkcji możesz zarządzać wyświetlaniem modeli 3D</p>
@@ -39,7 +42,10 @@
             </div>
         </div>
     </header>
-    <header class="main-menu-left">
+    <header class="main-menu-left-open" id="menu-left">
+        <div class="btn-for-switching-menu-on-off">
+            <span class="fas fa-times" id="menu-left-icon"></span>
+        </div>
         <div class="main-menu-left-top">
             <h1>Ustawienia modeli 3D</h1>
             <p>Przy pomocy ustawień możesz zmieniać modele, tła.</p>
@@ -48,25 +54,17 @@
             <button class="selecting-models main-menu-left-btn main-left-menu-choice-category" data-category="models-to-choose-from-container">Wybierz modele 360</button>
             <button class="selecting-backgrounds main-left-menu-choice-category main-menu-left-btn" data-category="backgrounds-of-your-choice-from-container">Wybierz tło</button>
             <div class="models-to-choose-from-container selecting-a-category-in-the-menu" >
-            <!-- <div class="models-to-choose-from-container"> -->
 
             </div>
             <div class="backgrounds-of-your-choice-from-container selecting-a-category-in-the-menu">
-                <!-- <div class="bakgrounds-of-your-chocie">
-                    <div class="bakgrounds-of-your-chocie-img">
-                        <img src="models/room/room.png">
-                    </div>
-                    <h3>Pokój</h3>
-                </div> -->
             </div>
-            
         </div>
 
     </header>
     <main>
 
     </main>
-
     <script src="src/app.js" type="module"></script>
+    <script src="src/Menu-operation.js"></script>
 </body>
 </html>

@@ -17,41 +17,24 @@ function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(sceneBackground);
 
-	geometry = new THREE.BoxGeometry( 2, 2, 2 );
-    material = new THREE.MeshPhongMaterial({
-        color: "white"
-    })
-    material.side = THREE.BackSide;
-
-    mesh = new THREE.Mesh( geometry, material );
-    mesh.scale.set(160,160,160)
-    mesh.position.y = 158;
-    mesh.receiveShadow = true;
-
-	// scene.add( mesh );
-
 	renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true, } );
 	renderer.setSize( window.innerWidth, window.innerHeight );
     document.querySelector('main').appendChild( renderer.domElement );
 
-    // ============== SHADOW ====================
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = THREE.BasicShadowMap;
-    //  =============== SHADOW ========================
 
     controls = new OrbitControls( camera, renderer.domElement );
     controls.maxPolarAngle = 1.50; 
     controls.rotateSpeed = 0.55; 
-    controls.maxDistance = 170;
+    controls.maxDistance = 220;
     controls.minDistance = 38;
-    // controls.autoRotate = true;
     controls.enableDamping = true
     controls.autoRotateSpeed = 2;
 
     controls.update();
     scene.add( new THREE.AmbientLight( 0x222222 ) );
 
-    // scene.add( new THREE.AxesHelper( 20 ) );
 }
 
 let light = () => {
@@ -64,11 +47,9 @@ let light = () => {
         addLight.position.y = individualLights["position_y"]
         addLight.position.z = individualLights["position_z"]
 
-        // ========= SHADOW =============
         addLight.castShadow = true;
         addLight.shadow.camera.near = 5;
         addLight.shadow.camera.far = 5;
-        // =========== SHADOW =============
 
         scene.add(addLight)
     })
@@ -105,11 +86,9 @@ const loadingModels = () => {
                 let models = gltf.scene.children[0]
                 models.name = modelValues.folderName
 
-                // ============== SHADOW =====================
                 models.receiveShadow = true;
                 models.castShadow = true;
-                // ============== SHADOW =====================
-                // default values
+
                 models.position.x = modelValues["position_x"];
                 models.position.y = modelValues["position_y"];
                 models.position.z = modelValues["position_z"];
@@ -175,12 +154,12 @@ const elementCloning = () => {
 }
 
 const functionAfterLoadingModels = () => {
-    elementCloning(); // Klonowanie elementów jeżeli jakieś są
+    elementCloning(); 
     generatingModelsInTheMenu();
     generatingABackgroundInTheMenu();
-    toDisplayTheMenu(); // ustawianie eventu po wygenerowaniu menu
-    activationOfTheFirstMenu(); // wyświetlanie menu po lewej
-    displayingTheFirstModel(); // wyświetlanie pierwszego modelu
+    toDisplayTheMenu(); 
+    activationOfTheFirstMenu(); 
+    displayingTheFirstModel(); 
 } 
 
 const generatingModelsInTheMenu = () => {
@@ -356,8 +335,4 @@ const displayingTheFirstModel = () => {
         const firstModelInCategory = document.querySelectorAll('.selecting-the-model')[0].dataset.folderName 
         scene.getObjectByName(firstModelInCategory).visible = true;
     }
-
 }
-
-
-

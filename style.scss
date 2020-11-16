@@ -108,15 +108,28 @@ canvas {
     display: none;
 }
 
-.main-menu-left {
+.main-menu-left-open {
     height: 100%;
     width: 250px;
     background-color: #ededed;
     border-right: 1px solid rgb(228, 228, 228);
     position: fixed;
     z-index: 2;
+    transition-duration: 0.5s;
+    .btn-for-switching-menu-on-off {
+        display: flex;
+        justify-content: end;
+        position: absolute;
+        right: -45px;
+        span {
+            font-size: 35px;
+            cursor: pointer;
+            background-color: #ededed;
+            padding: 5px 10px 5px 10px;
+        }
+    }
     .main-menu-left-top {
-        margin: 15px;
+        margin: 15px 15px 15px 15px;
         h1 {
             font-size: 22px;
             font-weight: 900;
@@ -175,17 +188,11 @@ canvas {
                     .selecting-the-model:hover{
                         border: 1px solid rgb(154, 154, 154);
                     }
-                    .selecting-the-model-active {
-                        width: 170px;
-                        height: 170px;
-                        border: 1px solid rgb(154, 154, 154);
-                    }
                 }
                 h3 {
                     color: rgb(59, 59, 59);
                 }
             }
-
         }
         h3 {
             font-size: 14px;
@@ -229,6 +236,10 @@ canvas {
     }
 }
 
+.main-menu-left-close {
+    margin-left: -250px;
+}
+
 .bottom-menu {
     width: 100%;
     height: 100px;
@@ -244,6 +255,18 @@ canvas {
     border-left: 1px solid #e4e4e4;
     position: fixed;
     right: 0;
+    transition-duration: 0.5s;
+    .right-menu-close-open {
+        display: flex;
+        position: absolute;
+        left: -46px;
+        span {
+            font-size: 25px;
+            cursor: pointer;
+            background-color: #ededed;
+            padding: 5px 10px 5px 10px;
+        }
+    }
     .right-menu-top {
         margin: 15px;
         h3 {
@@ -278,4 +301,7 @@ canvas {
             }
         }
     }
+}
+.right-menu-close {
+    margin-right: -200px;
 }
