@@ -11,7 +11,7 @@ init();
 animate();
 function init() {
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10000 );
-    camera.position.set( 0, 150, 350 );
+    camera.position.set( 0, 50, 200 );
 
     const sceneBackground = "#fafafa";
     scene = new THREE.Scene();
@@ -27,7 +27,7 @@ function init() {
     controls = new OrbitControls( camera, renderer.domElement );
     controls.maxPolarAngle = 1.50; 
     controls.rotateSpeed = 0.55; 
-    controls.maxDistance = 220;
+    controls.maxDistance = 250;
     controls.minDistance = 38;
     controls.enableDamping = true
     controls.autoRotateSpeed = 2;
@@ -125,6 +125,7 @@ const checkingTheLoadingOfModels = () => {
         document.querySelector('.result-loading').textContent = `Załadowano ${numberOfModelsLoaded} z ${theModelThatIsBeingLoaded.length} modeli 3D `
     }
 }
+
 
 let repeating = setInterval(checkingTheLoadingOfModels, 100)
 if (theModelThatIsBeingLoaded.length == 0) {
