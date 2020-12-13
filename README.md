@@ -2,7 +2,7 @@
 Strona internetowa w formie aplikacji pozwala na wybieranie z menu modelu do wyświetlenia, oglądania go w 360 stopniach, jest także możliwość wyboru tła. 
 
 ## Cel projektu
-Projekt ma na celu prezentację modeli 3D na stronach internetowych.
+Projekt ma na celu łatwą prezentację modeli 3D na stronach internetowych.
 
 ## Technologie
   - HTML5
