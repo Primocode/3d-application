@@ -5,7 +5,6 @@ import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.
 import { modelInformation } from './date.js';
 
 let camera, scene, renderer, controls;
-let geometry, material, mesh;
 
 init();
 animate();
@@ -34,7 +33,6 @@ function init() {
 
     controls.update();
     scene.add( new THREE.AmbientLight( 0x222222 ) );
-
 }
 
 let light = () => {
@@ -63,7 +61,6 @@ function animate() {
     requestAnimationFrame( animate );
     controls.update();
     renderer.render( scene, camera );
-    
 }
 
 const handleResize = () => {
@@ -125,7 +122,6 @@ const checkingTheLoadingOfModels = () => {
         document.querySelector('.result-loading').textContent = `Załadowano ${numberOfModelsLoaded} z ${theModelThatIsBeingLoaded.length} modeli 3D `
     }
 }
-
 
 let repeating = setInterval(checkingTheLoadingOfModels, 100)
 if (theModelThatIsBeingLoaded.length == 0) {
