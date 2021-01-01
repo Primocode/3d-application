@@ -301,7 +301,11 @@ canvas {
 }
 
 .main-menu-left-open .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img .selecting-the-model:hover {
-  border: 1px solid #9a9a9a;
+  background-color: #d8d8d8;
+}
+
+.main-menu-left-open .main-menu-left-container .models-to-choose-from-container .model-to-choose-from .model-to-chose-from-img .selecting-the-model-active {
+  background-color: #d8d8d8;
 }
 
 .main-menu-left-open .main-menu-left-container .models-to-choose-from-container .model-to-choose-from h3 {

@@ -331,5 +331,6 @@ const displayingTheFirstModel = () => {
     if (document.querySelectorAll('.selecting-the-model')[0]) {
         const firstModelInCategory = document.querySelectorAll('.selecting-the-model')[0].dataset.folderName 
         scene.getObjectByName(firstModelInCategory).visible = true;
+        document.querySelectorAll('.selecting-the-model')[0].classList.add("selecting-the-model-active")
     }
 }
